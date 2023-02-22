@@ -1,10 +1,10 @@
+
 const mongoose=require("mongoose")
 
-const UserSchema=mongoose.Schema({
+const AdminSchema=mongoose.Schema({
     name:{
         type:String,
-        
-    },
+         },
     password:{
         type:String,
         required:[true, "Please provide a Password"],
@@ -24,6 +24,6 @@ const UserSchema=mongoose.Schema({
    
 })
 
-const UserModel=mongoose.model("user",UserSchema)
+const AdminModel=mongoose.model("admin",AdminSchema)
 
-module.exports={UserModel}
+module.exports={AdminModel}
