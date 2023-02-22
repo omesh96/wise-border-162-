@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import {React} from "react";
 import {
   FormLabel,
   Input,
@@ -13,7 +13,7 @@ import style from "./Signup.module.css";
 import { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { UserLogin_request } from "../redux/actionTypes";
 
@@ -38,7 +38,7 @@ export default function Signup() {
   function hendleSubmit() {
     dispatch(UserLogin_request(loginCred))
       .then((res) =>
-        res.type == "Singin_sucess"
+        res.type === "Singin_sucess"
           ? navigate("/login")
           : toast({
               title: "Ragistretion Fail",
