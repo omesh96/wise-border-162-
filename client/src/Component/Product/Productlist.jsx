@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "../Product/Product.module.css"
-
+import {Box} from "@chakra-ui/react" 
+import ProductCart from './ProductCart'
 const Productlist = () => {
   return (
     
@@ -26,8 +27,9 @@ const Productlist = () => {
         </div>
         <hr/>
       </div>
-      
+    <ProductCart/>
     </div>
+   
   )
 }
 

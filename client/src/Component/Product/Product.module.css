@@ -6,12 +6,11 @@
 .filter_component {
   width: 17%;
   border-right: 1px solid gray;
-  border: 1px solid;
+  margin-top: 20px;
 }
 
 .booklist {
   width: 83%;
- 
 }
 .main_container {
   width: 85%;
@@ -55,7 +54,106 @@
   margin-left: 10px;
   font-weight: 600;
 }
-
 .top_second_div img {
   width: 25px;
 }
+
+@media only screen and (max-width: 376px) {
+  .filter_component {
+    background-color: blue;
+    display: none;
+  }
+  .top_div h1 {
+    margin-left: 5px;
+    color: gray;
+    font-size: 16px;
+  }
+  .top_second_div {
+    display: flex;
+    margin-left: 40px;
+    margin-top: 25px;
+    border-bottom: 2px solid rgb(32, 214, 59);
+    width: 40%;
+    padding: 0px;
+    padding-bottom: 7px;
+  }
+  .top_second_div h4 {
+    color: gray;
+    font-size: 10px;
+    margin-left: 5px;
+    font-weight: 600;
+  }
+  .filter_div {
+    border: 1px solid green;
+    margin-right: 30px;
+    width: 30%;
+    color: gray;
+    font-size: 7px;
+    padding: 0px;
+    border-radius: 4px;
+  }
+}
+
+/*CartPage */
+
+.cartbox{
+ width: 26%;
+ margin-top: 15px;
+ height: 440px;
+ padding: 4px;
+
+ border-radius: 10px;
+}
+.cartbox{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* transition: 0.5s all ease-in-out;  */
+
+}
+.cartbox:hover{
+ /* transform: scale(1.1);  */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.discount{
+  font-size: 12px;
+  padding: 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  color: rgb(186, 67, 67);
+  text-align: center;
+}
+.discount_star{
+margin-left: 5px;
+margin-top: 3px;
+}
+
+.imgbox{
+  width: 100%;
+  padding: 4px;
+}
+.discription{
+  height: 125px;
+  padding: 0px;
+}
+.addbtn{
+  background-color: rgb(49, 156, 214);
+  color: white;
+  width: 70px;
+  height: 25px;
+}
+
+/* Sidebar */
+
+.filter_box{
+height: 200px;
+overflow-x: hidden;
+color: gray;
+margin-top: 15px;
+font-size: 14px;
+
+}
+
+.filter_box label{
+  margin-left: 5px;
+}
+
+
+
