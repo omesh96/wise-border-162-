@@ -2,7 +2,11 @@ const express=require("express")
 const cors=require("cors")
 const { Connection } = require("./configuration/db")
 const { UserRoute } = require("./Routes/User")
+
 const { AdminRoute } = require("./Routes/Admin")
+
+const { productRouter } = require("./Routes/Product")
+
 require("dotenv").config()
 
 const PORT=process.env.PORT || 8000
@@ -20,8 +24,13 @@ app.get("/",(req,res)=>{
 // user Routes //
 app.use("/user",UserRoute)
 
+
 // admin Routes //
 app.use("/admin",AdminRoute)
+
+//product Route
+app.use('/products',productRouter);
+
 
 app.listen(PORT,async ()=>{
    try{
