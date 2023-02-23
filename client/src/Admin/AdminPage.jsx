@@ -80,6 +80,8 @@ const AdminPage = () => {
 </div>
    </div>
   return (
+    <>
+    <Heading>Users</Heading>
     <div className='admindiv'>
         {userdata && userdata.map((el,ind)=>{
             return  <div className="flip-card" key={el._id}>
@@ -92,9 +94,7 @@ const AdminPage = () => {
                 <div className="flip-card-back">
                     
                     <div className='backbtn'>
-        
-                   
-                   <a className="btn"  onClick={()=>handledeletebtn(el._id)}>Delete</a> {/* pta nhi q modal me click krne pe sirf last element ja rha hai  */}
+ <a className="btn"  onClick={()=>handledeletebtn(el._id)}>Delete</a> {/* pta nhi q modal me click krne pe sirf last element ja rha hai  */}
 
                    {/* <Modal
         initialFocusRef={initialRef}
@@ -128,6 +128,7 @@ const AdminPage = () => {
         </div>
         })}
     </div>
+    </>
   )
 }
 
