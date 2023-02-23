@@ -18,6 +18,9 @@ export const reducer = (state = initialState, { type, payload }) => {
         case types.GET_DATA_FAILURE:
             return { ...state, isLoading: false, isError: true }
 
+            case types.UPDATE_DATA: 
+            return {...state , products:payload}
+
         default:
             return state;
 

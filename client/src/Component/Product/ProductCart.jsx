@@ -32,8 +32,9 @@ const ProductCart = ({ data }) => {
     price,
     ratings,
     reviews,
+    id,
   } = data;
-  console.log("yes", data);
+
   const toast = useToast();
 
   if (isLoading) {
@@ -41,7 +42,7 @@ const ProductCart = ({ data }) => {
   } else {
     return (
       <>
-        <Box className={styles.cartbox}>
+        <Box  className={styles.cartbox}>
           <Flex className={styles.discount}>
             <Text fontSize={11} marginLeft={"58%"} textAlign={"right"}>
               {discount}
@@ -60,7 +61,7 @@ const ProductCart = ({ data }) => {
               {brand}
             </Text>
             <Text textAlign={"left"} fontSize={14}>
-              {GiNurseMale}
+              {name}
             </Text>
 
             <Flex
