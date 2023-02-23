@@ -4,6 +4,7 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 
 export function Dropdown() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpened, setIsOpened] = useState(false);
 
   return (
     <Flex ml={"10rem"} border="1px solid lightgrey" width={"80%"} display={{base:"none",sm:"none",md:"none",lg:"flex"}} >
@@ -13,15 +14,14 @@ export function Dropdown() {
           <ChevronDownIcon ml={"3rem"}/>
       </MenuButton>
       
-      
       <MenuList onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} border="2px solid red" width={"500px"}>
         
-        <Menu>
-        <MenuButton>
-        <MenuItem _hover={{fontWeight:"bold"}}>Fruits & Vegitables</MenuItem>
+        <Menu isOpen={isOpened}>
+        <MenuButton onMouseEnter={() => setIsOpened(true)} onMouseLeave={() => setIsOpened(false)}>
+        <MenuItem _hover={{fontWeight:"bold"}}><Text mr={"20rem"} border={"2px solid teal"}>Fruits & Vegitables</Text></MenuItem>
         </MenuButton>
-            <MenuList>
-              <MenuItem></MenuItem>
+            <MenuList onMouseEnter={() => setIsOpened(true)} onMouseLeave={() => setIsOpened(false)}>
+              <MenuItem>Hello</MenuItem>
             </MenuList>
         </Menu>
         
