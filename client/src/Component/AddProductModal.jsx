@@ -1,4 +1,4 @@
-import React, { useState,useRef,useCallback } from 'react'
+import React, { useState,useRef,useCallback, useContext } from 'react'
 import {
     useDisclosure,
     Button,
@@ -16,12 +16,18 @@ import {
     Select,
     HStack,
     Text,
-    Textarea
+    Textarea,
+    Heading,useToast, Box
 } from '@chakra-ui/react';
 import {AiOutlinePlus} from 'react-icons/ai'
 import axios from 'axios'
+import { AuthContext } from '../Admin/context/Allcontext';
+import ProductPage from '../Admin/Productpage';
 
 const AddProductModal = () => {
+    const {state,dispatch}=useContext(AuthContext)
+    const toast = useToast()
+   
   
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [Category,setCategory] = useState('');
@@ -101,9 +107,18 @@ const AddProductModal = () => {
                 available : Available
             }
             await addProductApi(productDetails);
+           setTimeout(()=>{
             setLoading(false);
             resetForm();
             onClose();
+            toast({
+                title: 'Item Added',
+                description: "Item Added Successfully...!.",
+                status: 'success',
+                duration: 6000,
+                isClosable: true,
+              })
+           },2000)
         }
         else
         {
@@ -135,13 +150,30 @@ const AddProductModal = () => {
             console.log(err);
         }
     }
-
-
+   //  console.log("Total_product",state.total_product)
+     /*  loading indicator  */
+     if(loading) return <div className='loader'>
+    <div className="wrapper">
+        <Heading color={"gray"}>Adding......</Heading >
+    <div className="circle"></div>
+    <div className="circle"></div>
+    <div className="circle"></div>
+    <div className="shadow"></div>
+    <div className="shadow"></div>
+    <div className="shadow"></div>
+</div>
+   </div>
   return (
     <>
-      <Button leftIcon={<AiOutlinePlus color="white" size="25px" />} colorScheme='green' variant='solid' onClick={onOpen}>
+    <Box className='productbtn'>
+    <Button leftIcon={<AiOutlinePlus color="white" size="25px" />} colorScheme='blue' variant='solid' onClick={onOpen}
+      >
         Add Product
       </Button>
+      <Button>Total-Products-{state.total_product}</Button>
+    </Box>
+     
+      <ProductPage />
       <Modal
         isCentered
         onClose={onClose}

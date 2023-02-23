@@ -3,7 +3,7 @@ const mongoose=require("mongoose")
 
 const AdminSchema=mongoose.Schema({
     name:{
-        type:String,
+     type:String,
          },
     password:{
         type:String,

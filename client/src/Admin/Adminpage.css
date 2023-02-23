@@ -121,12 +121,14 @@ body {
    }
 
    /* loading indicator */
+  
 
    .wrapper {
     width: 200px;
     height: 60px;
     position: relative;
     z-index: 1;
+    margin-top: -500px;
   }
   
   .circle {
@@ -221,8 +223,7 @@ body {
 
  /* sidebar css */
  .sidebar_main_box{
-  height: 100vw;
-  width: 100vw;  /* viewpoint relative unit for div to cover whole page */
+   /* viewpoint relative unit for div to cover whole page */
    padding: 20px;
    display: flex;
    justify-content: space-between;
@@ -258,10 +259,19 @@ body {
  .adminnavbar{
   width: 80%;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   padding: 20px;
  }
  .adminnavbar button{
   border-radius: 20px;
+  
+ }
+ .adminnavbar button:hover{
+  background-color: blue;
+ }
+
+ .productbtn{
+  display: flex;
+  justify-content: space-evenly;
  }
