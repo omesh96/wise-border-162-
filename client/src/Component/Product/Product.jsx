@@ -1,7 +1,7 @@
-import React from 'react'
-import Productlist from './Productlist'
-import Sidebar from '../Sidebar'
-import styles from "../Product/Product.module.css"
+import React from "react";
+import Productlist from "./Productlist";
+import Sidebar from "../Sidebar";
+import styles from "../Product/Product.module.css";
 const Product = () => {
   return (
     <div className={styles.main_container}>
@@ -15,7 +15,7 @@ const Product = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;

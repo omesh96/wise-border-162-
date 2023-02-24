@@ -38,11 +38,20 @@ const ProductCart = ({ data }) => {
   const toast = useToast();
 
   if (isLoading) {
-    return <div className={styles.loader}></div>;
+    return (
+      <div className={styles.loader}>
+        {" "}
+        <img
+          src="https://www.bbassets.com/static/v2639/custPage/build/content/img/bb-loader.gif"
+          alt="loading"
+        />{" "}
+      </div>
+    );
+    // <div className={styles.loader}></div>;
   } else {
     return (
       <>
-        <Box  className={styles.cartbox}>
+        <Box className={styles.cartbox}>
           <Flex className={styles.discount}>
             <Text fontSize={11} marginLeft={"58%"} textAlign={"right"}>
               {discount}
@@ -167,8 +176,8 @@ const ProductCart = ({ data }) => {
                 </InputGroup>
 
                 <Button
-                  className={styles.addbtn}
-                  colorScheme="black"
+                  // className={styles.addbtn}
+                  colorScheme={"pink"}
                   rightIcon={<IoMdCart fontSize="15px" />}
                   fontSize="14px"
                   color="white"

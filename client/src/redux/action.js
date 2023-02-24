@@ -2,7 +2,7 @@ import * as types from "./actionTypes";
 import axios from "axios";
 
 
-const getData = () => (dispatch) => {
+const getData = (dispatch) => {
     dispatch({ type: types.GET_DATA_REQUEST });
 
     return axios.get('http://localhost:8080/products/').then((res) => {
@@ -19,8 +19,8 @@ const updateProductsRequest = (payload) => {
 }
 
 
-const updateData = (data) => {
-    updateProductsRequest(data)
+const updateData = ( data) => (dispatch)=> {
+    dispatch(updateProductsRequest(data))
 }
 
 export { getData, updateData }

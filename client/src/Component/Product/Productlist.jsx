@@ -13,19 +13,19 @@ const Productlist = () => {
   const [newProducts, setNewProducts] = useState(products);
 
   useEffect(() => {
-    dispatch(getData());
+    dispatch(getData);
   }, [newProducts]);
 
+  console.log("products", products);
 
+  //Popularty Sorting
+  const handlePopular = () => {
+    let filterdData = products.sort((a, b) => {
+      return b.rating - a.rating;
+    });
+    setNewProducts(filterdData);
+  };
 
-    //Popularty Sorting
-    const handlePopular = () => {
-      let filterdData = products.sort((a, b) => {
-        return b.rating - a.rating;
-      });
-      setNewProducts(filterdData);
-    };
-  
   //Low to High
   const handleLTH = () => {
     let filterdData = products.sort((a, b) => {
@@ -46,9 +46,8 @@ const Productlist = () => {
   const handleAlpha = () => {
     let filterdData = products.sort((a, b) => a.name.localeCompare(b.name));
     setNewProducts(filterdData);
-    console.log("alfa" ,setNewProducts)
+    console.log("alfa", setNewProducts);
   };
-
 
   //RupeeSaving High to Low
   const handleSavingHTL = () => {
@@ -60,14 +59,13 @@ const Productlist = () => {
 
   //RupeeSaving Low to High
   const handleSavingLTH = () => {
-     let filterdData = products.sort((a, b) => {
+    let filterdData = products.sort((a, b) => {
       return a.reviews - b.reviews;
     });
     setNewProducts(filterdData);
   };
 
-
-     // Discount sorting
+  // Discount sorting
   const handleOff = () => {
     let filterdData = products.sort((a, b) => {
       return b.discount - a.discount;
@@ -75,28 +73,23 @@ const Productlist = () => {
     setNewProducts(filterdData);
   };
 
-
   const Sorting = (value) => {
-    if (value === "lth") {
-      handleLTH();
-    } else if (value === "htl") {
+    if (value === "htl") {
       handleHTL();
+    } else if (value === "lth") {
+      handleLTH();
     } else if (value === "alpha") {
       handleAlpha();
-    }else if (value === "rthl"){
-      handleSavingHTL()
-    }else if(value === "rlth"){
-      handleSavingLTH()
-    }else if(value==="popularity"){
-      handlePopular()
-    }else if(value==="ohtl"){
-      handleOff()
-    }else{
-      setNewProducts(products)
+    } else if (value === "rthl") {
+      handleSavingHTL();
+    } else if (value === "rlth") {
+      handleSavingLTH();
+    } else if (value === "popularity") {
+      handlePopular();
+    } else if (value === "ohtl") {
+      handleOff();
     }
   };
-
-
 
   return (
     <div>
