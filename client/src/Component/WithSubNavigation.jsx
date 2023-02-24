@@ -57,7 +57,7 @@ export default function WithSubnavigation() {
           >
             {/* Logo */}
             <Img
-              width={["20", "30", "30"]}
+              width={["16", "16", "16"]}
               borderRadius="1rem"
               src={logo}
               alt="BigBlow"

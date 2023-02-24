@@ -8,7 +8,7 @@ const MyCarousel = () => {
       showArrows={true}
       showThumbs={false}
       autoPlay={true}
-      interval={5000}
+      interval={2000}
       infiniteLoop={true}
       stopOnHover={true}
       swipeable={true}
@@ -37,13 +37,13 @@ const MyCarousel = () => {
       ]}
     >
       <div className={styles.slider}>
-        <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtZtULxydOaNFubaBQJzqbVr73Laek28TYE4Vk2Zp-zg&s" />
+        <img height={[300,350,400,450]}  src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_bcd_paneer_460px-020122.jpg" />
       </div>
       <div className={styles.slider}>
-        <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-23.fit_lim.v1643131202.jpg" />
+        <img height={[300,350,400,450]} src="https://www.bigbasket.com/media/uploads/banner_images/HP_EMF_M_T1-1600x460_221012.jpg" />
       </div>
       <div className={styles.slider}>
-        <img src="https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-23.fit_lim.v1643131202.jpg" />
+        <img height={[300,350,400,450]} src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_FMCG-PL_iDFreshoStore_460px-250123.jpg" />
       </div>
     </Carousel>
   );
