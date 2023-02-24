@@ -23,10 +23,10 @@ import axios from 'axios'
 
 
 
-const UpdateProductModal = (props) => {
+const UpdateProductModal = (el) => {
 
-  const {_id,category,brand,name,price,discount,description,images,ratings,reviews,available} = props;
-  
+  const {_id,category,brand,name,price,discount,description,images,ratings,reviews,available} = el;
+  console.log("id",_id)
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [Category,setCategory] = useState(category);
     const categoryRef = useRef(null);

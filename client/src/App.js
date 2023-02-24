@@ -9,9 +9,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Dropdown />
-      <Homepage />
-      <Footer/>
       <Allroutes />
     </div>
   );

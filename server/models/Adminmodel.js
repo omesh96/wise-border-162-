@@ -3,7 +3,7 @@ const mongoose=require("mongoose")
 
 const AdminSchema=mongoose.Schema({
     name:{
-        type:String,
+     type:String,
          },
     password:{
         type:String,
@@ -20,7 +20,8 @@ const AdminSchema=mongoose.Schema({
         type:Number,
         required:[true, "Please provide a Mobile Number"]
     },
-    address:{type:String}
+    address:{type:String},
+    profile:{type:String}
    
 })
 

@@ -1,12 +1,15 @@
-import { Box, Text,Image,Heading} from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
-
-
-   
+import { Box, Text,Image,Heading, Button} from '@chakra-ui/react'
+import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router'
+import AddProductModal from '../Component/AddProductModal.jsx'
 import AdminNavbar from './AdminNavbar.jsx'
 import AdminPage from './AdminPage.jsx'
+import { AuthContext } from './context/Allcontext.jsx'
+import ProductPage from './Productpage.jsx'
 
 const Sidebar = () => {
+    const navigate=useNavigate()
+    const {state,dispatch,USER,PRODUCT,PRODUCT_MODAL}=useContext(AuthContext)
   
   return (
     <div className='sidebar_main_box'>
@@ -17,11 +20,14 @@ const Sidebar = () => {
                 <Text className='admin_info_text'>Omesh dubey</Text>
                 <Text className='admin_info_text'>Omesh dubey</Text>
             </Box>
+            <Box className='addproductbtn' >
+               {state.user &&  <Button colorScheme='green' variant='solid' onClick={()=>dispatch(PRODUCT_MODAL)} >All Products</Button>}
+            </Box>
         </div>
 
         <div className='main_content'>
             <AdminNavbar />
-       <AdminPage />
+        { state.user ? <AdminPage /> : state.product_modal ? <AddProductModal /> : ""}
         </div>
 
     </div>
