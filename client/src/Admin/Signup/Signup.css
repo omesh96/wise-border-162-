@@ -1,0 +1,120 @@
+.container{
+    width: 40%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 16px;
+}
+.submitbtn{
+    width: 60%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border-radius: 30px;
+}
+.submitbtn:hover{
+    background-color: red;
+    cursor: pointer;
+}
+.userimg{
+    width: 30%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+  cursor: pointer;
+ 
+}
+.userimg img{
+    width: 100%;
+    border-radius: 50%;
+}
+.form{
+    margin-top: 20px;
+}
+
+input[type='file']{
+    display: none;
+}
+
+.flexbox{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+   
+}
+
+
+ /* loader  */
+ @keyframes loader_5191 {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .square {
+    background: #ddd;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+  }
+  
+  #sq1 {
+    margin-top: -25px;
+    margin-left: -25px;
+    animation: loader_5191 675ms ease-in-out 0s infinite alternate;
+  }
+  
+  #sq2 {
+    margin-top: -25px;
+    animation: loader_5191 675ms ease-in-out 75ms infinite alternate;
+  }
+  
+  #sq3 {
+    margin-top: -25px;
+    margin-left: 15px;
+    animation: loader_5191 675ms ease-in-out 150ms infinite;
+  }
+  
+  #sq4 {
+    margin-left: -25px;
+    animation: loader_5191 675ms ease-in-out 225ms infinite;
+  }
+  
+  #sq5 {
+    animation: loader_5191 675ms ease-in-out 300ms infinite;
+  }
+  
+  #sq6 {
+    margin-left: 15px;
+    animation: loader_5191 675ms ease-in-out 375ms infinite;
+  }
+  
+  #sq7 {
+    margin-top: 15px;
+    margin-left: -25px;
+    animation: loader_5191 675ms ease-in-out 450ms infinite;
+  }
+  
+  #sq8 {
+    margin-top: 15px;
+    animation: loader_5191 675ms ease-in-out 525ms infinite;
+  }
+  
+  #sq9 {
+    margin-top: 15px;
+    margin-left: 15px;
+    animation: loader_5191 675ms ease-in-out 600ms infinite;
+  }

@@ -11,7 +11,7 @@ const AdminRoute=express.Router()
 
   // Register a admin // 
 AdminRoute.post("/register",(req,res)=>{
-    const {email,password,name,address,mobile}=req.body
+    const {email,password,name,address,mobile,profile}=req.body
 
     try{
     // check for existing email //
@@ -48,7 +48,7 @@ AdminRoute.post("/register",(req,res)=>{
         if(err){
             return res.status(500).send({err})
         } else{
-            const admin=new AdminModel({name,email,password:hash,address,mobile})
+            const admin=new AdminModel({name,email,password:hash,address,mobile,profile:profile || ""})
             await admin.save()
             res.status(201).send({msg:"Admin Register Successfully !"})
         }
@@ -56,7 +56,7 @@ AdminRoute.post("/register",(req,res)=>{
            }
          })
          .catch((err)=>{
-            return res.status(500).send({err:err})
+            return res.status(500).send({error:err})
          })
         
     }
@@ -70,7 +70,7 @@ AdminRoute.post("/login",(req,res)=>{
     const {email,password,secret_code}=req.body  // during login admin have to enter a secret_code to login as admin
     try{
         AdminModel.findOne({email},(err,user)=>{
-            if(!user) return  res.status(404).send({err:"email Not Found..!"})
+            if(!user) return  res.status(404).send({msg:"email Not Found..!"})
             if(user){
             if(secret_code===process.env.SECRET_CODE){
                 bcrypt.compare(password,user.password,(err,result)=>{  // comapiring hashed password
@@ -82,11 +82,11 @@ AdminRoute.post("/login",(req,res)=>{
                         // store all this information of admin in frontend to show in sidebar admin info...
                     }   
                     else{
-                       return  res.status(404).send({err:"Password Did Not Match"})
+                       return  res.status(404).send({msg:"Password Did Not Match"})
                     }
                  })
             } else{
-                return res.status(401).send({msg:"You are not authorised to login as Admin"})
+                return res.status(401).send({msg:"You are not authorised to login as Admin Because You Have wrong Secret_code"})
             }
             }
         })

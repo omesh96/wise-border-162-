@@ -228,7 +228,7 @@ body {
    display: flex;
    justify-content: space-between;
    background-color: black;
-   border: 1px solid red;
+  
  }
  .sidebar{
   width: 30%;

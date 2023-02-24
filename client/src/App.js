@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Dropdown />
-      <Homepage/>
+      {/* <Dropdown />
+      <Homepage/> */}
       <Allroutes />
     </div>
   );
