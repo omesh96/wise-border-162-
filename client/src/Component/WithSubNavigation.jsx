@@ -19,7 +19,7 @@ import { GrBasket } from "react-icons/gr";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
-
+  
   return (
     <Box>
       <Flex
