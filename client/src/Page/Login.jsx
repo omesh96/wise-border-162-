@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import axios from "axios";
+import React from "react";
+// import axios from "axios";
 import style from "./Login.module.css";
 import {
   FormLabel,
@@ -39,7 +39,7 @@ export default function Login() {
     // console.log(loginCred)
     dispatch(UserLogin_request(loginCred))
       .then((res) =>
-        res.type == "Login_sucess"
+        res.type === "Login_sucess"
           ? navigate("/")
           : toast({
               title: "Ragistretion Fail",
@@ -54,7 +54,7 @@ export default function Login() {
   }
   console.log(auth_state);
 
-  let [userData, setUserData] = useState([]);
+  // let [userData, setUserData] = useState([]);
 
   // --------------------------------------------------
   return (
