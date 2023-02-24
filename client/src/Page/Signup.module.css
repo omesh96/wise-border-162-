@@ -1,0 +1,7 @@
+.loading{
+    position:absolute;
+    z-index: 200;
+    top:25%;
+    left:45%;
+    filter: blur(5);
+}
