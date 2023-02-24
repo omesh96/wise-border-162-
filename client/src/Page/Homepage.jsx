@@ -1,7 +1,7 @@
 import MyCarousel from "../Component/MyCarousel";
 import { Button, Flex, Heading, Image, SimpleGrid } from "@chakra-ui/react";
-import { MultiCarousel } from "../Component/MultiCarousel";
 import SingleCarousel from "../Component/SingleCarousel";
+import { MultiCarousel } from "../Component/MultiCarousel";
 
 const Homepage = () => {
   return (
