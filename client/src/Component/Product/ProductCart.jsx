@@ -37,6 +37,12 @@ const ProductCart = ({ data }) => {
 
   const toast = useToast();
 
+
+
+  const handleClick=(ele)=>{
+      localStorage.setItem("singleData" , ele)
+  }
+
   if (isLoading) {
     return (
       <div className={styles.loader}>
@@ -51,7 +57,7 @@ const ProductCart = ({ data }) => {
   } else {
     return (
       <>
-        <Box className={styles.cartbox}>
+        <Box onClick={handleClick(name)} className={styles.cartbox}>
           <Flex className={styles.discount}>
             <Text fontSize={11} marginLeft={"58%"} textAlign={"right"}>
               {discount}
