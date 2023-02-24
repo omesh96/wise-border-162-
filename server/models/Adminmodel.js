@@ -20,7 +20,8 @@ const AdminSchema=mongoose.Schema({
         type:Number,
         required:[true, "Please provide a Mobile Number"]
     },
-    address:{type:String}
+    address:{type:String},
+    profile:{type:String}
    
 })
 
