@@ -7,14 +7,31 @@ import { getData, updateData } from "../../redux/action";
 import { useEffect } from "react";
 import { useState } from "react";
 
+
+
 const Productlist = () => {
   const dispatch = useDispatch();
   const { products } = useSelector((store) => store);
   const [newProducts, setNewProducts] = useState(products);
 
+
+
   useEffect(() => {
     dispatch(getData);
-  }, [newProducts]);
+    
+  }, [newProducts ]);
+
+
+  // useEffect(()=>{
+  //   setNewProducts(products)
+  // },[])
+
+console.log("NewProduct" ,newProducts)
+console.log("Products" , products )
+ 
+
+
+
 
   console.log("products", products);
 
@@ -129,8 +146,15 @@ const Productlist = () => {
         <hr />
       </div>
       <div className={styles.data}>
-        {newProducts.length > 0 &&
+        {products.length > 0 &&
           newProducts.map((el) => {
+            return <ProductCart key={el.id} data={el} />;
+          })}
+      </div>
+
+      <div className={styles.data}>
+      {products.length > 0 &&
+          products.map((el) => {
             return <ProductCart key={el.id} data={el} />;
           })}
       </div>
