@@ -11,15 +11,8 @@ import { store } from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Provider store={store}>
-   <BrowserRouter>
-
-import AuthContextProvider from './Admin/context/Allcontext';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
  
-
+    <Provider store={store}>
    <ChakraProvider>
    <AuthContextProvider>
    <BrowserRouter>
@@ -31,8 +24,6 @@ root.render(
    </BrowserRouter>
    </Provider>
 
-
- 
 );
 
 

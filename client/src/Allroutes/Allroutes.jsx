@@ -2,6 +2,8 @@ import React from 'react'
 import {Route, Routes} from "react-router-dom"
 import AdminNavbar from '../Admin/AdminNavbar'
 import AdminPage from '../Admin/AdminPage'
+import CartPage from '../Page/CartPage'
+import OrderPage from '../Page/OrderPage'
 import ProductPage from '../Admin/Productpage'
 import Sidebar from '../Admin/Sidebar'
 import AdminLogin from '../Admin/Signup/AdminLogin'
@@ -14,6 +16,8 @@ const Allroutes = () => {
    <>
    <Routes>
     <Route path='/admin' element={<AdminPage />}></Route>
+    <Route path="/orders" element={<OrderPage />} />
+    <Route path="/cart" element={<CartPage />}/>
     <Route path='/sidebar' element={<Sidebar />}></Route>
     <Route path='/adminnav' element={<AdminNavbar />}></Route>
     <Route path='/adminproduct' element={<ProductPage />}></Route>
