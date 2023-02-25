@@ -18,4 +18,5 @@ const [cart,setCart] = useState([]);
   )
 }
 
+
 export default CartPage
