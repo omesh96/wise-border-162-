@@ -102,13 +102,13 @@ UserRoute.post("/login",(req,res)=>{
 })
 
 // forgot password // 
-UserRoute.get("/forgot", async(req,res)=>{
+UserRoute.post("/forgot", async(req,res)=>{
     const {email} = req.body;
-  
+   console.log(email)
     try{
         UserModel.findOne({email},(err,user)=>{
         if(!user) return  res.status(404).send({err:"email Not Found..!",isUser:false})
- if(user) return  res.status(200).send({isUser:true,useremail:email}) ; // store this email in local-storage
+ if(user) return  res.status(200).send({isUser:true,useremail:email,msg:"email Verified..!"}) ; // store this email in local-storage
        // frontend me agar isUser true aa rha hai to update password wale page pe bhej dena hai
              }) 
   } 
