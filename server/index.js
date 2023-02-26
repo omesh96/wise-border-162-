@@ -6,6 +6,7 @@ const { UserRoute } = require("./Routes/User")
 const { AdminRoute } = require("./Routes/Admin")
 
 const { productRouter } = require("./Routes/Product")
+const { orderRouter } = require("./Routes/Order")
 
 require("dotenv").config()
 
@@ -30,6 +31,8 @@ app.use("/admin",AdminRoute)
 
 //product Route
 app.use('/products',productRouter);
+
+app.use("/orders",orderRouter)
 
 
 app.listen(PORT,async ()=>{
