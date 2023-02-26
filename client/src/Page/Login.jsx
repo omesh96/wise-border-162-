@@ -16,7 +16,7 @@ import { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
-import { UserLogin_request } from "../redux/actionTypes";
+import { UserLogin_request } from "../Redux/actionTypes";
 import { useDispatch, useSelector } from "react-redux";
 export default function Login() {
   let [theme, setTheme] = useState(false);
@@ -42,7 +42,7 @@ export default function Login() {
         res.type === "Login_sucess"
           ? navigate("/")
           : toast({
-              title: "Ragistretion Fail",
+              title: "Registration Fail",
               description: "Try to ragister again",
               status: "error",
               duration: 2000,
