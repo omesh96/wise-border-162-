@@ -7,7 +7,6 @@ import Allroutes from './Allroutes/Allroutes';
 
 import Product from './Component/Product/Product';
 import Sigleproduct from './Component/Product/Sigleproduct';
-
 import "./App.css";
 import Navbar from "./Component/Navbar";
 import { Dropdown } from "./Component/Dropdown";

@@ -18,6 +18,9 @@ import styles from "../Product/Product.module.css";
 import { GiNurseMale, GiSevenPointedStar } from "react-icons/gi";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import axios from "axios"
+import {ENV} from "../../db"
+
 
 const ProductCart = ({ data }) => {
   const { isLoading } = useSelector((store) => store);
@@ -37,6 +40,33 @@ const ProductCart = ({ data }) => {
 
   const toast = useToast();
 
+
+//   useEffect(()=>{
+//     getproductdata()
+//   },[])
+
+//   const getproductdata=()=>{
+//     axios.get(`${ENV.BASE_URL}/products/`)
+//     .then((response)=>{
+//      console.log( "res" , response.data)
+//     })
+//     .catch((error)=>{
+//      console.log(error)
+//     })
+//    }
+ 
+
+
+     
+
+  const handleClick=()=>{
+    for(let key in data){
+    console.log( "key" , data[key])
+    }          
+  }
+
+
+
   if (isLoading) {
     return (
       <div className={styles.loader}>
@@ -51,7 +81,7 @@ const ProductCart = ({ data }) => {
   } else {
     return (
       <>
-        <Box className={styles.cartbox}>
+        <Box onClick={()=>handleClick()} className={styles.cartbox}>
           <Flex className={styles.discount}>
             <Text fontSize={11} marginLeft={"58%"} textAlign={"right"}>
               {discount}
@@ -183,6 +213,7 @@ const ProductCart = ({ data }) => {
                   color="white"
                   variant="solid"
                   onClick={() => {
+
                     toast({
                       title: "Added to cart SuccessFully",
                       description: `${description}`,
@@ -209,8 +240,8 @@ const ProductCart = ({ data }) => {
 //   "category": "Fruits & Vegetables",
 //   "brand": "Fresho",
 //   "name": "Fresho Strawberry(200g)",
-//   "price": 75.66,
-//   "discount": 24,
+//   "pe": 75.66,
+//   "diricscount": 24,
 //   "description": "Extremely juicy and syrupy, these conical heart shaped fruits have seeds on the skin that give them a unique texture. With a blend of sweet-tart flavour, these are everyone's favourite berries.",
 //   "images": "https://www.bigbasket.com/media/uploads/p/l/10000263_12-fresho-strawberry.jpg",
 //   "ratings": 543,
