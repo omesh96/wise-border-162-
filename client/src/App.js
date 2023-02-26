@@ -2,11 +2,10 @@
 
 import './App.css';
 import Allroutes from './Allroutes/Allroutes';
-import Product from './Component/Product/Product';
+//import Product from './Component/Product/Product';
 import Sigleproduct from './Component/Product/Sigleproduct';
 
 import "./App.css";
-import Allroutes from "./Allroutes/Allroutes";
 import Navbar from "./Component/Navbar";
 import { Dropdown } from "./Component/Dropdown";
 import Homepage from "./Page/Homepage";
@@ -18,12 +17,12 @@ function App() {
     <div className="App">
 
      
-    <Allroutes />
-    <Sigleproduct/>
-    <Product/>
+   
+    {/* <Sigleproduct/> */}
 
       <Navbar />
       <Dropdown />
+      {/* <Product/> */}
       <Homepage />
       <Footer />
       <Allroutes />
