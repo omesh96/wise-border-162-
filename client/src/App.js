@@ -1,7 +1,7 @@
 
 
 import './App.css';
-import Allroutes from './Allroutes/Allroutes';
+
 import Product from './Component/Product/Product';
 import Sigleproduct from './Component/Product/Sigleproduct';
 
@@ -16,17 +16,18 @@ import { Footer } from "./Page/Footer";
 function App() {
   return (
     <div className="App">
+ 
+      <Navbar />    
+    <Allroutes />
+    {/* <Sigleproduct/>
+    <Product/> */}
 
      
-    <Allroutes />
-    <Sigleproduct/>
-    <Product/>
-
-      <Navbar />
-      <Dropdown />
+      {/* <Dropdown />
       <Homepage />
-      <Footer />
-      <Allroutes />
+  */}
+      <Footer /> 
+    
 
     </div>
   );

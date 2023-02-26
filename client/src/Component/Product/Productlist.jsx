@@ -3,7 +3,7 @@ import styles from "../Product/Product.module.css";
 import { Box } from "@chakra-ui/react";
 import ProductCart from "./ProductCart";
 import { useDispatch, useSelector } from "react-redux";
-import { getData, updateData } from "../../redux/action";
+import { getData, updateData } from "../../Redux/action";
 import { useEffect } from "react";
 import { useState } from "react";
 

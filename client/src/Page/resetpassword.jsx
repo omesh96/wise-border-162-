@@ -48,7 +48,7 @@ const Resetpassword = () => {
   const registeradmin=(data)=>{
     setloading(true)
     console.log(data.email)
-    return axios.patch(`${ENV.BASE_URL}/user/setpass`, {
+    return axios.patch(`${ENV.BASE_URL}/user/setpass`,{
        email:localStorage.getItem("forgotemail"),
        password:data.password
       })
@@ -56,7 +56,7 @@ const Resetpassword = () => {
        console.log(response.data)
       setTimeout(() => {
         toast({
-            title: 'Password Changed.',
+            title: 'Password Changed.', 
             description: response.data.msg,
             status: 'success',
             duration: 4000,

@@ -19,8 +19,11 @@ import { GiNurseMale, GiSevenPointedStar } from "react-icons/gi";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
+
 const ProductCart = ({ data }) => {
   const { isLoading } = useSelector((store) => store);
+
+  
 
   const {
     brand,
