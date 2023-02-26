@@ -3,7 +3,7 @@ import WithSubnavigation from "./WithSubNavigation"
 
 const Navbar = () => {
   return (
-    <div><WithSubnavigation/></div>
+    <div><WithSubnavigation /></div>
   )
 }
 export default Navbar
