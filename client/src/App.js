@@ -31,25 +31,10 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< HEAD
-
-     
-   
-    {/* <Sigleproduct/> */}
-
-      <Navbar />
-      <Dropdown />
-      <Product/>
-      <Homepage />
-      <Footer />
-      <Allroutes />
-=======
  
       <Navbar />    
     <Allroutes />
     <Footer /> 
-    
->>>>>>> b5e5ac6baa1cff8035212ebc2515e0ded4248578
 
     </div>
   );

@@ -16,19 +16,13 @@ import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 import logo from "./logo.jpg";
 import { GrBasket } from "react-icons/gr";
-<<<<<<< HEAD
 import { useSelector } from "react-redux";
-=======
 import { useNavigate } from "react-router";
->>>>>>> b5e5ac6baa1cff8035212ebc2515e0ded4248578
 
 export default function WithSubnavigation(props) {
   const { isOpen, onToggle } = useDisclosure();
-<<<<<<< HEAD
   const cart = useSelector((store)=>store.cartManager.data);
-=======
   const navigate=useNavigate()
->>>>>>> b5e5ac6baa1cff8035212ebc2515e0ded4248578
   
   return (
     <Box>
