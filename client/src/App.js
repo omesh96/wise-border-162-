@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< HEAD
+
 
      
    
@@ -45,13 +45,13 @@ function App() {
       {/* <Product/> */}
       {/* <Homepage /> */}
       <Footer />
-=======
+
  
       <Navbar />   
       <Dropdown /> 
     <Allroutes />
     <Footer /> 
->>>>>>> 43eff002fbcf48df6462ca845cbc3d217bd46d87
+
 
     </div>
   );
