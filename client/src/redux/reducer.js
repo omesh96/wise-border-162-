@@ -1,9 +1,11 @@
 import * as types from "./actionTypes";
 
 const initialState = {
+
     products: [],
     isLoading: false,
     isError: false,
+    myCartitem:0
 }
 
 export const reducer = (state = initialState, { type, payload }) => {
