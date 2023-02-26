@@ -7,20 +7,35 @@ import { getData, updateData } from "../../Redux/action";
 import { useEffect } from "react";
 import { useState } from "react";
 
+
+
 const Productlist = () => {
   const dispatch = useDispatch();
   const { products } = useSelector((store) => store);
   const [newProducts, setNewProducts] = useState(products);
 
+
+
   useEffect(() => {
     dispatch(getData);
-  }, [newProducts]);
+    
+  }, [newProducts ]);
 
-  console.log("products", products);
+
+ 
+
+//console.log("NewProduct" ,newProducts)
+console.log("Products" , products )
+ 
+
+
+
+
+//  console.log("products", products);
 
   //Popularty Sorting
   const handlePopular = () => {
-    let filterdData = products.sort((a, b) => {
+    let filterdData = products.products.sort((a, b) => {
       return b.rating - a.rating;
     });
     setNewProducts(filterdData);
@@ -28,7 +43,7 @@ const Productlist = () => {
 
   //Low to High
   const handleLTH = () => {
-    let filterdData = products.sort((a, b) => {
+    let filterdData = products.products.sort((a, b) => {
       return a.price - b.price;
     });
     setNewProducts(filterdData);
@@ -36,7 +51,7 @@ const Productlist = () => {
 
   //High to  Low
   const handleHTL = () => {
-    let filterdData = products.sort((a, b) => {
+    let filterdData = products.products.sort((a, b) => {
       return b.price - a.price;
     });
     setNewProducts(filterdData);
@@ -44,14 +59,14 @@ const Productlist = () => {
 
   //Alphabetical
   const handleAlpha = () => {
-    let filterdData = products.sort((a, b) => a.name.localeCompare(b.name));
+    let filterdData = products.products.sort((a, b) => a.name.localeCompare(b.name));
     setNewProducts(filterdData);
-    console.log("alfa", setNewProducts);
+   // console.log("alfa", setNewProducts);
   };
 
   //RupeeSaving High to Low
   const handleSavingHTL = () => {
-    let filterdData = products.sort((a, b) => {
+    let filterdData = products.products.sort((a, b) => {
       return b.discount - a.discount;
     });
     setNewProducts(filterdData);
@@ -59,7 +74,7 @@ const Productlist = () => {
 
   //RupeeSaving Low to High
   const handleSavingLTH = () => {
-    let filterdData = products.sort((a, b) => {
+    let filterdData = products.products.sort((a, b) => {
       return a.reviews - b.reviews;
     });
     setNewProducts(filterdData);
@@ -67,7 +82,7 @@ const Productlist = () => {
 
   // Discount sorting
   const handleOff = () => {
-    let filterdData = products.sort((a, b) => {
+    let filterdData = products.products.sort((a, b) => {
       return b.discount - a.discount;
     });
     setNewProducts(filterdData);
@@ -131,6 +146,13 @@ const Productlist = () => {
       <div className={styles.data}>
         {newProducts.length > 0 &&
           newProducts.map((el) => {
+            return <ProductCart key={el.id} data={el} />;
+          })}
+      </div>
+
+      <div className={styles.data}>
+      {products.length > 0 &&
+          products.map((el) => {
             return <ProductCart key={el.id} data={el} />;
           })}
       </div>

@@ -16,9 +16,11 @@ import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 import logo from "./logo.jpg";
 import { GrBasket } from "react-icons/gr";
+import { useNavigate } from "react-router";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const navigate=useNavigate()
   
   return (
     <Box>
@@ -84,7 +86,7 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
-            href={"#"}
+           onClick={()=>navigate("/userlogin")}
           >
             Login
           </Button>
@@ -95,7 +97,7 @@ export default function WithSubnavigation() {
             fontWeight={600}
             color={"white"}
             bg={"pink.400"}
-            href={"#"}
+           onClick={()=>navigate("/userregister")}
             _hover={{
               bg: "pink.300",
             }}
@@ -112,6 +114,8 @@ export default function WithSubnavigation() {
           borderRadius="2px"        
           width="116px"
           padding={"5px"}
+          style={{cursor:"pointer"}}
+          onClick={()=>navigate("/cart")}
         //   border={"2px solid green"}
         >
         <GrBasket size={"30px"} />

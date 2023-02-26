@@ -92,8 +92,30 @@ const Sigleproduct = () => {
                 Standard: Today 8:00AM - 10:00AM
                 </Text>
               </Flex>
-
               <Text marginTop={4} fontSize={14}>Pack Sizes</Text>
+
+              <div className={styles.logbtn}>
+              <Flex padding={1}>
+                <Box><Text fontSize={12} marginLeft={5}><b> 3*317g</b></Text>
+                 <Text color={"gray.600"} marginLeft={5} fontSize={12}>Multipack</Text>
+                </Box>
+              <Text fontSize={12} marginLeft={55}><b>Rs 510.60</b></Text>
+              <Text marginLeft={15} color={"gray.600"} fontSize={12}>MRP: Rs 555</Text>
+              <Text marginLeft={15} color={"red.600"} fontSize={12}>SAVE Rs 44</Text>
+              </Flex>
+                </div>
+ 
+                <div className={styles.logbtn}>
+              <Flex padding={1}>
+                <Box><Text fontSize={12} marginLeft={5}><b> 3*317g</b></Text>
+                 <Text color={"gray.600"} marginLeft={5} fontSize={12}>Multipack</Text>
+                </Box>
+              <Text fontSize={12} marginLeft={55}><b>Rs 510.60</b></Text>
+              <Text marginLeft={15} color={"gray.600"} fontSize={12}>MRP: Rs 555</Text>
+              <Text marginLeft={15} color={"red.600"} fontSize={12}>SAVE Rs 44</Text>
+              </Flex>
+                </div>
+
         </div>
       </div>
     </div>

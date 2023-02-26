@@ -17,6 +17,7 @@ import UserRegister from '../Page/UserRegister'
 import PrivateRoute from '../PrivateRoute'
 import Homepage from '../Page/Homepage'
 import ProductCart from '../Component/Product/ProductCart'
+import Product from '../Component/Product/Product'
 
 
 const Allroutes = () => {
@@ -38,7 +39,7 @@ const Allroutes = () => {
     <Route path='/userlogin' element={<UserLogin />}></Route>
     <Route path='/forgotpass' element={<ForgotPassword />}></Route>
     <Route path='/resetpass' element={<Resetpassword />}></Route>
-    <Route path='/productcart' element={<ProductCart />}></Route>
+    <Route path='/product' element={<Product />}></Route>
    </Routes>
    
    </>

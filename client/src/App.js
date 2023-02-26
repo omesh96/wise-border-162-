@@ -1,12 +1,15 @@
 
 
+
 import './App.css';
+
+import Allroutes from './Allroutes/Allroutes';
+//import Product from './Component/Product/Product';
+
 
 import Product from './Component/Product/Product';
 import Sigleproduct from './Component/Product/Sigleproduct';
-
 import "./App.css";
-import Allroutes from "./Allroutes/Allroutes";
 import Navbar from "./Component/Navbar";
 import { Dropdown } from "./Component/Dropdown";
 import Homepage from "./Page/Homepage";
@@ -19,14 +22,7 @@ function App() {
  
       <Navbar />    
     <Allroutes />
-    {/* <Sigleproduct/>
-    <Product/> */}
-
-     
-      {/* <Dropdown />
-      <Homepage />
-  */}
-      <Footer /> 
+    <Footer /> 
     
 
     </div>

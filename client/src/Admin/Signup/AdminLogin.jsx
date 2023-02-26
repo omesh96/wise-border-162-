@@ -55,7 +55,7 @@ const AdminLogin = () => {
         
         email:data.email,
         password:data.password,
-        secret_code:data.secret_code
+        secret_code:data.secret_code || "bigblow"
       })
       .then( (response)=> {
        console.log(response.data)

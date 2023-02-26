@@ -1,6 +1,20 @@
-import { CART_DEC_COUNT, CART_ERROR, CART_LOADING, CART_RESET, CART_SUCCESS } from "./cart.actionType"
+import { CART_DEC_COUNT, CART_ERROR,CART_INC_COUNT,CART_CLEAR_ERROR, CART_LOADING, CART_RESET, CART_SUCCESS } from "./cart.actionType"
+
+
+export const getCartProducts = () => (dispatch) =>{
+    dispatch({type : CART_LOADING});
+    const res = JSON.parse(localStorage.getItem("bbCart"))||[];
+    localStorage.setItem("bbCart",JSON.stringify(res));
+    let sum = 0;
+    for(let i=0;i<res.length;i++)
+    {
+        sum+=res[i]['price'];
+    }
+    dispatch({type : CART_SUCCESS,payload : {items : res, sum : sum}});
+}
 
 export const addNewProductCart = (payload)=>(dispatch) =>{
+    console.log("hellow cart")
     dispatch({type : CART_LOADING})
     const res = JSON.parse(localStorage.getItem("bbCart"))||[];
     for(let i=0;i<res.length;i++)
