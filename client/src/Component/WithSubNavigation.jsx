@@ -16,10 +16,12 @@ import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 import logo from "./logo.jpg";
 import { GrBasket } from "react-icons/gr";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 
-export default function WithSubnavigation() {
+export default function WithSubnavigation(props) {
   const { isOpen, onToggle } = useDisclosure();
+  const cart = useSelector((store)=>store.cartManager.data);
   const navigate=useNavigate()
   
   return (
@@ -119,8 +121,7 @@ export default function WithSubnavigation() {
         //   border={"2px solid green"}
         >
         <GrBasket size={"30px"} />
-         My Basket
-         0 items          
+         My Basket : {cart.length}   
         </Flex>  
       </Flex>
 
