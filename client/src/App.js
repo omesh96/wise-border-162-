@@ -22,10 +22,10 @@ function App() {
 
       <Navbar />
       <Dropdown />
-      {/* <Product/> */}
-      <Homepage />
-      <Footer />
       <Allroutes />
+      {/* <Product/> */}
+      {/* <Homepage /> */}
+      <Footer />
 
     </div>
   );

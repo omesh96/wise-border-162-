@@ -9,6 +9,7 @@ import AdminRegister from '../Admin/Signup/AdminSignup'
 import AddProductModal from '../Component/AddProductModal'
 import UpdateProductModal from '../Component/UpdateProductModal'
 
+
 const Allroutes = () => {
   return (
    <>
@@ -21,6 +22,7 @@ const Allroutes = () => {
     <Route path='/updateproduct' element={<UpdateProductModal />}></Route>
     <Route path='/adminregister' element={<AdminRegister />}></Route>
     <Route path='/adminlogin' element={<AdminLogin />}></Route>
+    
    </Routes>
    
    </>

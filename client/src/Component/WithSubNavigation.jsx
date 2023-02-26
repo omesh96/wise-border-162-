@@ -16,12 +16,20 @@ import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 import logo from "./logo.jpg";
 import { GrBasket } from "react-icons/gr";
+import{Navigate} from "react-router-dom"
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   
   return (
-    <Box>
+    <Box
+    top="0"
+    right={"0"}
+    left="0"
+    position="fixed"
+    zIndex="91"
+    
+    >
       <Flex
         width={"80%"}
         margin="auto"
@@ -84,7 +92,8 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
-            href={"#"}
+            // href={""}
+            onClick={()=>{ <Navigate to={"/login"} /> }}
           >
             Login
           </Button>

@@ -7,7 +7,7 @@ export function Dropdown() {
   
 
   return (
-    <Flex ml={"10rem"} border="1px solid lightgrey" width={"79%"} display={{base:"none",sm:"none",md:"none",lg:"none", xl:"none", "2xl":"flex"}} >
+    <Flex mt={"5rem"}  ml={"10rem"} border="1px solid lightgrey" width={"79%"} display={{base:"none",sm:"none",md:"none",lg:"none", xl:"none", "2xl":"flex"}} >
     
     <Menu isOpen={isOpen}>
 
