@@ -1,10 +1,12 @@
-import { Flex, HStack, VStack,Image,Text, Button } from '@chakra-ui/react'
+import { Flex, HStack, VStack,Image,Text, Button, useToast } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { increaseProductCount } from '../Redux/Cart/cart.action';
-
+import { increaseProductCount, removeProductCart } from '../Redux/Cart/cart.action';
+import { useDispatch } from 'react-redux';
 const CartProduct = (props) => {
     const {productDetails} = props;
     const [qty, setQty] = useState(productDetails['productCount']);
+    const dispatch = useDispatch();
+    
 
     const incrementClick = ()=>{
         if(qty<5)
@@ -28,9 +30,19 @@ const CartProduct = (props) => {
             </VStack>
         </Flex>
         <HStack gap={0}>
-            <Button  size="sm" onClick={()=>decrementClick(productDetails['_id'])}>-</Button>
+            <Button  size="sm" onClick={()=>dispatch(decrementClick(productDetails['_id']))}>-</Button>
             <Button disabled size="sm">{qty}</Button>
-            <Button  size="sm" onClick={()=>incrementClick(productDetails['_id'])}>+</Button>
+            <Button  size="sm" onClick={()=>dispatch(incrementClick(productDetails['_id']))}>+</Button>
+            <Button size="sm" colorScheme="red" onClick={()=>{
+                dispatch(removeProductCart(productDetails))
+            props.handler({
+                title: 'Product Removed',
+                description: "Product has been removed!",
+                status: 'success',
+                duration: 1000,
+                position : 'top-center',
+                isClosable: true,
+            })}}>Remove</Button>
         </HStack>
         <Text fontSize="sm" fontWeight="bold" color="gray">Rs.{(productDetails.price-(productDetails.price*productDetails.discount/100)).toFixed(2)} x {qty} = {((productDetails.price-(productDetails.price*productDetails.discount/100.0))*qty).toFixed(2)}</Text>
     </Flex>

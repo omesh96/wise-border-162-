@@ -83,6 +83,7 @@ export const setError = (payload) => (dispatch) => {
 }
 
 export const removeProductCart = (payload)=>(dispatch)=>{
+    console.log("remove");
     dispatch({type : CART_LOADING});
     const res = JSON.parse(localStorage.getItem("bbCart"))||[];
     for(let i=0;i<res.length;i++)
