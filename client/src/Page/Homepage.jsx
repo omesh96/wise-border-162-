@@ -1,7 +1,7 @@
 import MyCarousel from "../Component/MyCarousel";
 import { Button, Flex, Heading, Image, SimpleGrid } from "@chakra-ui/react";
 import SingleCarousel from "../Component/SingleCarousel";
-import { MultiCarousel } from "../Component/MultiCarousel";
+import CarouselCosmetics from "../Component/CarouselCosmetics";
 
 const Homepage = () => {
   return (
@@ -27,8 +27,8 @@ const Homepage = () => {
       
       <Heading mt={"2rem"} fontSize="20px">Best Sellers</Heading>
       
-      <MultiCarousel />
-      
+      <CarouselCosmetics/>
+  
       <Heading mt={"2rem"} fontSize="20px">Top Offers</Heading>
 
       <SimpleGrid columns={[2,3,4,4]} w={"70%"} m="auto" gap={"10px"} mt="2rem">
@@ -119,8 +119,7 @@ const Homepage = () => {
       </SimpleGrid>
 
       <Image m={"auto"} w={"70%"} mt="2rem" src="https://www.bigbasket.com/media/uploads/banner_images/hp_bbw_c_400_web_wellness_banner_1_dec_w2_14012023.jpg" alt="image" />
-      
-      {/* <br /> */}
+  
     </div>
   );
 };
