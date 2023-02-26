@@ -17,16 +17,12 @@ import React from "react";
 import styles from "../Product/Product.module.css";
 import { GiNurseMale, GiSevenPointedStar } from "react-icons/gi";
 import { useDispatch, useSelector } from "react-redux";
-import { addNewProductCart } from "../../Redux/Cart/cart.action";
 
 
 
 
 const ProductCart = ({ data }) => {
   const { isLoading } = useSelector((store) => store);
-  const dispatch=useDispatch()
-
-  
 
   const {
     brand,
@@ -45,16 +41,13 @@ const ProductCart = ({ data }) => {
 
 
 
- 
-
-
      
 
-  const handleClick=()=>{
-    for(let key in data){
-    console.log( "key" , data[key])
-    }          
-  }
+  // const handleClick=()=>{
+  //   for(let key in data){
+  //   console.log( "key" , data[key])
+  //   }          
+  // }
 
 
 
@@ -72,7 +65,7 @@ const ProductCart = ({ data }) => {
   } else {
     return (
       <>
-        <Box onClick={()=>handleClick()} className={styles.cartbox}>
+        <Box className={styles.cartbox}>
           <Flex className={styles.discount}>
             <Text fontSize={11} marginLeft={"58%"} textAlign={"right"}>
               {discount}
@@ -204,7 +197,7 @@ const ProductCart = ({ data }) => {
                   color="white"
                   variant="solid"
                   onClick={() => {
-                   dispatch(addNewProductCart(data))
+
                     toast({
                       title: "Added to cart SuccessFully",
                       description: `${description}`,
@@ -240,4 +233,4 @@ const ProductCart = ({ data }) => {
 //   "available": true
 // }
 
-export default ProductCart;
+export default ProductCart

@@ -82,14 +82,17 @@ const UserRegister = () => {
       })
       .catch( (error)=> {
        console.log(error)
+      setTimeout(()=>{
+        setloading(false)
        toast({
         title: 'Account Not created.',
-        description: error.response.data.error.error,
+        description: error.response.data.err.error,
         status: 'error',
-        duration: 9000,
+        duration: 5000,
         isClosable: true,
       })
-      setloading(false)
+      },2000)
+      
       });
     
   }
@@ -102,18 +105,18 @@ const UserRegister = () => {
     const base64=await convertTobase64(e.target.files[0]);
     setfile(base64)
   }
-  console.log("files",file)
+  
   if(loading){
-    return<div class="loader">
-    <div class="square" id="sq1"></div>
-    <div class="square" id="sq2"></div>
-    <div class="square" id="sq3"></div>
-    <div class="square" id="sq4"></div>
-    <div class="square" id="sq5"></div>
-    <div class="square" id="sq6"></div>
-    <div class="square" id="sq7"></div>
-    <div class="square" id="sq8"></div>
-    <div class="square" id="sq9"></div>
+    return<div className="loader">
+    <div className="square" id="sq1"></div>
+    <div className="square" id="sq2"></div>
+    <div className="square" id="sq3"></div>
+    <div className="square" id="sq4"></div>
+    <div className="square" id="sq5"></div>
+    <div className="square" id="sq6"></div>
+    <div className="square" id="sq7"></div>
+    <div className="square" id="sq8"></div>
+    <div className="square" id="sq9"></div>
   </div>
    }
   return (
@@ -144,6 +147,7 @@ const UserRegister = () => {
 
  </form>
  <span className='span'>Already Register? <Link to="/userlogin" style={{color:"red"}}> Login Now</Link> </span>
+  <br />
  <span className='span'>Are You a Admin? <Link to="/adminlogin" style={{color:"red"}}> Login for admin</Link> </span>
  
   </div>

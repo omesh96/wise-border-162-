@@ -65,7 +65,7 @@ const UserLogin = () => {
           duration: 9000,
           isClosable: true,
         })
-          navigate("/")
+          navigate("/sidebar")
       }, 2000);
       })
       .catch( (error)=> {

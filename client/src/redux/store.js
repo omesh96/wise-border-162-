@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import { cartReducer } from "./Cart/cart.reducer";
 import { reducer } from "./reducer";
 
-const rootReducer = combineReducers({
+ const rootReducer = combineReducers({
     cartManager : cartReducer,
     products : reducer
 })
