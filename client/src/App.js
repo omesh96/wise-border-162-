@@ -41,11 +41,15 @@ function App() {
 
     
 
+
+      <Navbar />
+      <Dropdown />
+      <Allroutes />
+    
+      <Footer />
+
+
  
-      <Navbar />   
-      <Dropdown /> 
-    <Allroutes />
-    <Footer /> 
 
 
     </div>
