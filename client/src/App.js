@@ -37,14 +37,9 @@ function App() {
 
      
    
-    {/* <Sigleproduct/> */}
+   
 
-      <Navbar />
-      <Dropdown />
-      <Allroutes />
-      {/* <Product/> */}
-      {/* <Homepage /> */}
-      <Footer />
+    
 
  
       <Navbar />   
