@@ -3,18 +3,31 @@ import styles from "../Product/Product.module.css";
 import { Box } from "@chakra-ui/react";
 import ProductCart from "./ProductCart";
 import { useDispatch, useSelector } from "react-redux";
-import { getData, updateData } from "../../redux/action";
+import { getData, updateData } from "../../Redux/action";
 import { useEffect } from "react";
 import { useState } from "react";
 
+
+
 const Productlist = () => {
   const dispatch = useDispatch();
-  const { products } = useSelector((store) => store);
+  const { products } = useSelector((store) => store.products);
   const [newProducts, setNewProducts] = useState(products);
+
+
 
   useEffect(() => {
     dispatch(getData);
-  }, [newProducts]);
+    
+  }, [newProducts ]);
+
+
+console.log("NewProduct" ,newProducts)
+console.log("Products" , products )
+ 
+
+
+
 
   console.log("products", products);
 
@@ -129,8 +142,15 @@ const Productlist = () => {
         <hr />
       </div>
       <div className={styles.data}>
-        {newProducts.length > 0 &&
+        {products.length > 0 &&
           newProducts.map((el) => {
+            return <ProductCart key={el.id} data={el} />;
+          })}
+      </div>
+
+      <div className={styles.data}>
+      {products.length > 0 &&
+          products.map((el) => {
             return <ProductCart key={el.id} data={el} />;
           })}
       </div>

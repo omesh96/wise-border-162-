@@ -16,10 +16,17 @@ import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 import logo from "./logo.jpg";
 import { GrBasket } from "react-icons/gr";
+<<<<<<< HEAD
 import{Navigate} from "react-router-dom"
+=======
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+>>>>>>> 43eff002fbcf48df6462ca845cbc3d217bd46d87
 
-export default function WithSubnavigation() {
+export default function WithSubnavigation(props) {
   const { isOpen, onToggle } = useDisclosure();
+  const cart = useSelector((store)=>store.cartManager.data);
+  const navigate=useNavigate()
   
   return (
     <Box
@@ -92,8 +99,12 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
+<<<<<<< HEAD
             // href={""}
             onClick={()=>{ <Navigate to={"/login"} /> }}
+=======
+           onClick={()=>navigate("/userlogin")}
+>>>>>>> 43eff002fbcf48df6462ca845cbc3d217bd46d87
           >
             Login
           </Button>
@@ -104,7 +115,7 @@ export default function WithSubnavigation() {
             fontWeight={600}
             color={"white"}
             bg={"pink.400"}
-            href={"#"}
+           onClick={()=>navigate("/userregister")}
             _hover={{
               bg: "pink.300",
             }}
@@ -121,11 +132,12 @@ export default function WithSubnavigation() {
           borderRadius="2px"        
           width="116px"
           padding={"5px"}
+          style={{cursor:"pointer"}}
+          onClick={()=>navigate("/cart")}
         //   border={"2px solid green"}
         >
         <GrBasket size={"30px"} />
-         My Basket
-         0 items          
+         My Basket : {cart.length}   
         </Flex>  
       </Flex>
 

@@ -17,8 +17,9 @@ const Sidebar = () => {
             <Heading as={"h1"} >Admin DashBoard</Heading>
             <Image src="https://images.freeimages.com/fic/images/icons/2526/bloggers/256/admin.png" alt="pict" />
             <Box className='admin_info'>
-                <Text className='admin_info_text'>Omesh dubey</Text>
-                <Text className='admin_info_text'>Omesh dubey</Text>
+                <Text className='admin_info_text' color={"yellow"}>{(localStorage.getItem("adminname")).toUpperCase()}</Text>
+                <Text className='admin_info_text' color={"tomato"}>{localStorage.getItem("adminmobile")}</Text>
+                <Text className='admin_info_text' color={"yellow"}>{localStorage.getItem("adminemail")}</Text>
             </Box>
             <Box className='addproductbtn' >
                {state.user &&  <Button colorScheme='green' variant='solid' onClick={()=>dispatch(PRODUCT_MODAL)} >All Products</Button>}

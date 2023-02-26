@@ -51,7 +51,7 @@ productRouter.post('/add',async (req,res)=>{
     }
 })
 
-//Update a Product
+//Update a Product  //
 productRouter.patch('/:id',async (req,res)=>{
     const id = req.params.id
     try{
@@ -73,6 +73,18 @@ productRouter.delete('/:id',async (req,res)=>{
     }
     catch(err){
         res.send({message : "Something Went Wrong!", error:  err.message});
+    }
+})
+
+// product add to cart by user //
+productRouter.post("/addtocart",async(req,res)=>{
+    const {id,email}=req.body      // id means id of product and email of login user
+    try{
+        const data = await ProductModel.findById({_id : id});
+        console.log(data)
+    }
+    catch(err){
+        res.status(501).send({error:"Item Not Added To Cart"})
     }
 })
 

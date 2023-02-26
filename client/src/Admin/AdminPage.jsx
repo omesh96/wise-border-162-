@@ -88,7 +88,7 @@ const AdminPage = () => {
             <div className="flip-card-inner" >
                 <div className="flip-card-front">
                 <Image src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="log" />
-                    <p className="title">{el.name}</p>
+                    <p className="title">{(el.name).toUpperCase()}</p>
                     <p>{el.email}</p>
                 </div>
                 <div className="flip-card-back">

@@ -9,25 +9,24 @@ import {
   Image,
   Box,useToast 
 } from '@chakra-ui/react'
-import "../Signup/Signup.css"
+import "../Admin/Signup/Signup.css"
 import { Link, useNavigate } from 'react-router-dom'
-import avatar from "../../assets/profile.png"
+import avatar from ".././assets/profile.png"
 import { Toaster } from "react-hot-toast"
 import { useState } from 'react'
 import axios from "axios"
-import {ENV} from "../../db"
+import {ENV} from "../db"
 
-import { passwordvalidate, registerValidation } from '../../helper/validate'
-import { convertTobase64 } from '../../helper/convert'
+import { passwordvalidate, registerValidation } from '../helper/validate'
+import { convertTobase64 } from '../helper/convert'
 
 const initdata={
  
  email:"",
- password:"",
- secret_code:""
+ password:""
 }
 
-const AdminLogin = () => {
+const UserLogin = () => {
   const [data,setdata]=useState(initdata)
   const [file,setfile]=useState()
   const navigate=useNavigate()
@@ -51,17 +50,13 @@ const AdminLogin = () => {
 
   const registeradmin=(data)=>{
     setloading(true)
-    return axios.post(`${ENV.BASE_URL}/admin/login`, {
+    return axios.post(`${ENV.BASE_URL}/user/login`, {
         
         email:data.email,
-        password:data.password,
-        secret_code:data.secret_code || "bigblow"
+        password:data.password
       })
       .then( (response)=> {
-       console.log(response.data)
-       localStorage.setItem('adminemail',response.data.email)
-       localStorage.setItem("adminname",response.data.name)
-       localStorage.setItem("adminmobile",response.data.mobile)
+       console.log(response)
       setTimeout(() => {
         toast({
           title: 'Account created.',
@@ -74,11 +69,11 @@ const AdminLogin = () => {
       }, 2000);
       })
       .catch( (error)=> {
-       console.log(error.response.data.msg)
+       console.log(error)
        setloading(false)
        toast({
         title: 'Account Not created.',
-        description: error.response.data.msg,
+        description: error.response.data.err,
         status: 'error',
         duration: 9000,
         isClosable: true,
@@ -89,7 +84,7 @@ const AdminLogin = () => {
 
 
   console.log(data)
-  const {email,password,secret_code}=data
+  const {email,password}=data
 
   const onupload=async(e)=>{
     const base64=await convertTobase64(e.target.files[0]);
@@ -112,7 +107,7 @@ const AdminLogin = () => {
   return (
   <div className="container">
     <Toaster position='top-center' reverseOrder={false}></Toaster>
-    <Heading m={"20px"}>Admin Login !</Heading>
+    <Heading m={"20px"}>User Login !</Heading>
  <form action="" onSubmit={handlesubmit}>
  <FormControl>
  {/* <FormLabel htmlFor='profile'>
@@ -125,8 +120,7 @@ const AdminLogin = () => {
    value={email} name="email"  />
 <Input type='password' style={{border:"1px solid black",width:"60%",margin:"10px"}} placeholder="User password*" onChange={handlechange} 
    value={password} name="password"  />
-   <Input type='text' style={{border:"1px solid black",width:"60%",margin:"10px"}} placeholder="Secret_Code*" onChange={handlechange} 
-   value={secret_code} name="secret_code"  />
+   
    
  
 </FormControl>
@@ -134,9 +128,12 @@ const AdminLogin = () => {
 <input type="submit" value='Lest Go!' className='submitbtn' />
 
  </form>
- <span className='span'>Dont Have an Account? <Link to="/adminregister" style={{color:"red"}}> Register Now</Link> </span>
+ <span className='span'>Dont Have an Account? <Link to="/userregister" style={{color:"red"}}> Register Now</Link> </span>
+  <br />
+ <span className='span'>forgot Password? <Link to="/forgotpassword" style={{color:"red"}}> Reset Now</Link> </span>
+  
   </div>
   )
 }
 
-export default AdminLogin
+export default UserLogin
