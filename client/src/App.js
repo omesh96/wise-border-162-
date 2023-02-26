@@ -21,7 +21,9 @@ import { useDispatch } from 'react-redux';
 
 function App() {
 
-  const cart = useSelector((store)=>store.cartManager.data);
+  const cart = useSelector((store) => store.cartManager.data);
+  
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,10 +33,24 @@ function App() {
 
   return (
     <div className="App">
+<<<<<<< HEAD
+
+     
+   
+    {/* <Sigleproduct/> */}
+
+      <Navbar />
+      <Dropdown />
+      <Allroutes />
+      {/* <Product/> */}
+      {/* <Homepage /> */}
+      <Footer />
+=======
  
       <Navbar />    
     <Allroutes />
     <Footer /> 
+>>>>>>> 43eff002fbcf48df6462ca845cbc3d217bd46d87
 
     </div>
   );

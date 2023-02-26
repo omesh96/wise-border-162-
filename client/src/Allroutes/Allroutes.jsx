@@ -20,6 +20,7 @@ import ProductCart from '../Component/Product/ProductCart'
 import Product from '../Component/Product/Product'
 
 
+
 const Allroutes = () => {
   return (
    <>
@@ -35,11 +36,15 @@ const Allroutes = () => {
     <Route path='/updateproduct' element={<UpdateProductModal />}></Route>
     <Route path='/adminregister' element={<AdminRegister />}></Route>
     <Route path='/adminlogin' element={<AdminLogin />}></Route>
+<<<<<<< HEAD
+    
+=======
     <Route path='/userregister' element={<UserRegister />}></Route>
     <Route path='/userlogin' element={<UserLogin />}></Route>
     <Route path='/forgotpass' element={<ForgotPassword />}></Route>
     <Route path='/resetpass' element={<Resetpassword />}></Route>
     <Route path='/product' element={<Product />}></Route>
+>>>>>>> 43eff002fbcf48df6462ca845cbc3d217bd46d87
    </Routes>
    
    </>

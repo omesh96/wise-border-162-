@@ -1,9 +1,16 @@
 import React from "react";
-import { Box, IconButton, useBreakpointValue,Button ,Icon } from "@chakra-ui/react";
+import {
+  Box,
+  IconButton,
+  useBreakpointValue,
+  Button,
+  Icon,
+  SimpleGrid,
+} from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
-import {  BiRightArrowAlt } from "react-icons/bi";
-import {  AiFillCaretLeft,AiFillCaretRight } from "react-icons/ai";
-import { AiFillStar } from 'react-icons/ai'
+import { BiRightArrowAlt } from "react-icons/bi";
+import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
+import { AiFillStar } from "react-icons/ai";
 
 // And react-slick as our Carousel Lib
 import { useState, useEffect } from "react";
@@ -36,11 +43,11 @@ export default function CarouselCosmetics() {
   // As we have used custom buttons, we need a reference variable to
   // change the state
   const [slider, setSlider] = React.useState(1);
-  const navigate=useNavigate();
-  const handleClick=(item)=>{
+  const navigate = useNavigate();
+  const handleClick = (item) => {
     // setItem("singleproduct",item)
-  navigate("/cosmetics/singleproduct")
-}
+    navigate("/cosmetics/singleproduct");
+  };
 
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
@@ -66,7 +73,7 @@ export default function CarouselCosmetics() {
 
   return (
     <Box
-      // border={"2px solid red"}
+      //  border={"2px solid red"}
       m="auto"
       position={"relative"}
       height={"450px"}
@@ -96,8 +103,10 @@ export default function CarouselCosmetics() {
         transform={"translate(0%, -50%)"}
         zIndex={2}
         onClick={() => slider?.slickPrev()}
-      >  
-   <Button backgroundColor={"blue.300"}><AiFillCaretLeft color="black" /></Button>
+      >
+        <Button backgroundColor={"blue.300"}>
+          <AiFillCaretLeft color="black" />
+        </Button>
       </IconButton>
       {/* Right Icon */}
       <IconButton
@@ -111,13 +120,22 @@ export default function CarouselCosmetics() {
         zIndex={2}
         onClick={() => slider?.slickNext()}
       >
-     <Button backgroundColor={"blue.300"}><AiFillCaretRight color="black" /></Button>
+        <Button backgroundColor={"blue.300"}>
+          <AiFillCaretRight color="black" />
+        </Button>
       </IconButton>
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {data.map((el, index) => (
-          <Card cursor="pointer" onClick={()=>handleClick(el)} height="460px"  maxW="sm">
-            <CardBody>
+          <SimpleGrid
+            cursor="pointer"
+            // onClick={() => handleClick(el)}
+            height="460px"
+            maxW="sm"
+            // border="2px solid red"
+            
+          >
+            <Box>
               <Image
                 id="hov"
                 ml="20px"
@@ -140,21 +158,23 @@ export default function CarouselCosmetics() {
                     .map((_, i) => {
                       let rating = Math.ceil(Math.random() * 3);
 
-                      return <Icon
-                        as={AiFillStar}
-                        key={i}
-                        color={i <= rating ? "gold" : "gray.300"}
-                      />
+                      return (
+                        <Icon
+                          as={AiFillStar}
+                          key={i}
+                          color={i <= rating ? "gold" : "gray.300"}
+                        />
+                      );
                     })}
                 </Box>
 
                 <Text ml="30px" textAlign="center" fontSize="sm">
                   <Flex ml="60px">
-                    <Text>Sold-by -</Text><Text fontWeight="bold">{el.soldby}</Text>
+                    <Text>Sold-by -</Text>
+                    <Text fontWeight="bold">{el.soldby}</Text>
                   </Flex>
                 </Text>
                 <Box>
-             
                   <Flex marginLeft="80px" textAlign="bottom">
                     <Text mr="5px">$1.00/2</Text>
                     <AiFillDollarCircle
@@ -167,13 +187,14 @@ export default function CarouselCosmetics() {
                     <Text ml="5px">Cashback</Text>
                   </Flex>
                 </Box>
-                <Text color="teal" mb="30px">Free shipping with $99 orders</Text>
+                <Text color="teal" mb="30px">
+                  Free shipping with $99 orders
+                </Text>
               </Stack>
-            </CardBody>
-          </Card>
+            </Box>
+          </SimpleGrid>
         ))}
       </Slider>
- </Box>
-);
+    </Box>
+  );
 }
-

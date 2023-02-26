@@ -16,8 +16,12 @@ import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 import logo from "./logo.jpg";
 import { GrBasket } from "react-icons/gr";
+<<<<<<< HEAD
+import{Navigate} from "react-router-dom"
+=======
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+>>>>>>> 43eff002fbcf48df6462ca845cbc3d217bd46d87
 
 export default function WithSubnavigation(props) {
   const { isOpen, onToggle } = useDisclosure();
@@ -25,7 +29,14 @@ export default function WithSubnavigation(props) {
   const navigate=useNavigate()
   
   return (
-    <Box>
+    <Box
+    top="0"
+    right={"0"}
+    left="0"
+    position="fixed"
+    zIndex="91"
+    
+    >
       <Flex
         width={"80%"}
         margin="auto"
@@ -88,7 +99,12 @@ export default function WithSubnavigation(props) {
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
+<<<<<<< HEAD
+            // href={""}
+            onClick={()=>{ <Navigate to={"/login"} /> }}
+=======
            onClick={()=>navigate("/userlogin")}
+>>>>>>> 43eff002fbcf48df6462ca845cbc3d217bd46d87
           >
             Login
           </Button>
