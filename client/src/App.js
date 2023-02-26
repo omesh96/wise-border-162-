@@ -12,9 +12,21 @@ import Navbar from "./Component/Navbar";
 import { Dropdown } from "./Component/Dropdown";
 import Homepage from "./Page/Homepage";
 import { Footer } from "./Page/Footer";
-
+import { useSelector } from 'react-redux';
+import { getCartProducts } from './Redux/Cart/cart.action';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 function App() {
+
+  const cart = useSelector((store)=>store.cartManager.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCartProducts());
+  }, [])
+  
+
   return (
     <div className="App">
 
@@ -24,7 +36,7 @@ function App() {
 
       <Navbar />
       <Dropdown />
-      {/* <Product/> */}
+      <Product/>
       <Homepage />
       <Footer />
       <Allroutes />
