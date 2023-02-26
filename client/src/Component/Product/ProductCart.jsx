@@ -17,13 +17,16 @@ import React from "react";
 import styles from "../Product/Product.module.css";
 import { GiNurseMale, GiSevenPointedStar } from "react-icons/gi";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import axios from "axios"
-import {ENV} from "../../db"
+import { addNewProductCart } from "../../Redux/Cart/cart.action";
+
+
 
 
 const ProductCart = ({ data }) => {
   const { isLoading } = useSelector((store) => store);
+  const dispatch=useDispatch()
+
+  
 
   const {
     brand,
@@ -41,19 +44,7 @@ const ProductCart = ({ data }) => {
   const toast = useToast();
 
 
-//   useEffect(()=>{
-//     getproductdata()
-//   },[])
 
-//   const getproductdata=()=>{
-//     axios.get(`${ENV.BASE_URL}/products/`)
-//     .then((response)=>{
-//      console.log( "res" , response.data)
-//     })
-//     .catch((error)=>{
-//      console.log(error)
-//     })
-//    }
  
 
 
@@ -213,7 +204,7 @@ const ProductCart = ({ data }) => {
                   color="white"
                   variant="solid"
                   onClick={() => {
-
+                   dispatch(addNewProductCart(data))
                     toast({
                       title: "Added to cart SuccessFully",
                       description: `${description}`,

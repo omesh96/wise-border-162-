@@ -22,22 +22,20 @@ const Productlist = () => {
   }, [newProducts ]);
 
 
-  // useEffect(()=>{
-  //   setNewProducts(products)
-  // },[])
+ 
 
-console.log("NewProduct" ,newProducts)
+//console.log("NewProduct" ,newProducts)
 console.log("Products" , products )
  
 
 
 
 
-  console.log("products", products);
+//  console.log("products", products);
 
   //Popularty Sorting
   const handlePopular = () => {
-    let filterdData = products.sort((a, b) => {
+    let filterdData = products.products.sort((a, b) => {
       return b.rating - a.rating;
     });
     setNewProducts(filterdData);
@@ -45,7 +43,7 @@ console.log("Products" , products )
 
   //Low to High
   const handleLTH = () => {
-    let filterdData = products.sort((a, b) => {
+    let filterdData = products.products.sort((a, b) => {
       return a.price - b.price;
     });
     setNewProducts(filterdData);
@@ -53,7 +51,7 @@ console.log("Products" , products )
 
   //High to  Low
   const handleHTL = () => {
-    let filterdData = products.sort((a, b) => {
+    let filterdData = products.products.sort((a, b) => {
       return b.price - a.price;
     });
     setNewProducts(filterdData);
@@ -61,14 +59,14 @@ console.log("Products" , products )
 
   //Alphabetical
   const handleAlpha = () => {
-    let filterdData = products.sort((a, b) => a.name.localeCompare(b.name));
+    let filterdData = products.products.sort((a, b) => a.name.localeCompare(b.name));
     setNewProducts(filterdData);
-    console.log("alfa", setNewProducts);
+   // console.log("alfa", setNewProducts);
   };
 
   //RupeeSaving High to Low
   const handleSavingHTL = () => {
-    let filterdData = products.sort((a, b) => {
+    let filterdData = products.products.sort((a, b) => {
       return b.discount - a.discount;
     });
     setNewProducts(filterdData);
@@ -76,7 +74,7 @@ console.log("Products" , products )
 
   //RupeeSaving Low to High
   const handleSavingLTH = () => {
-    let filterdData = products.sort((a, b) => {
+    let filterdData = products.products.sort((a, b) => {
       return a.reviews - b.reviews;
     });
     setNewProducts(filterdData);
@@ -84,7 +82,7 @@ console.log("Products" , products )
 
   // Discount sorting
   const handleOff = () => {
-    let filterdData = products.sort((a, b) => {
+    let filterdData = products.products.sort((a, b) => {
       return b.discount - a.discount;
     });
     setNewProducts(filterdData);
@@ -146,7 +144,7 @@ console.log("Products" , products )
         <hr />
       </div>
       <div className={styles.data}>
-        {products.length > 0 &&
+        {newProducts.length > 0 &&
           newProducts.map((el) => {
             return <ProductCart key={el.id} data={el} />;
           })}

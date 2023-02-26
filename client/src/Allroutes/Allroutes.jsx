@@ -14,16 +14,21 @@ import ForgotPassword from '../Page/Forgotpassword'
 import Resetpassword from '../Page/resetpassword'
 import UserLogin from '../Page/Userlogin'
 import UserRegister from '../Page/UserRegister'
+import PrivateRoute from '../PrivateRoute'
+import Homepage from '../Page/Homepage'
+import ProductCart from '../Component/Product/ProductCart'
+import Product from '../Component/Product/Product'
 
 
 const Allroutes = () => {
   return (
    <>
    <Routes>
+   <Route path='/' element={<Homepage />}></Route>
     <Route path='/admin' element={<AdminPage />}></Route>
     <Route path="/orders" element={<OrderPage />} />
     <Route path="/cart" element={<CartPage />}/>
-    <Route path='/sidebar' element={<Sidebar />}></Route>
+    <Route path='/sidebar' element={<PrivateRoute><Sidebar /></PrivateRoute> }></Route>
     <Route path='/adminnav' element={<AdminNavbar />}></Route>
     <Route path='/adminproduct' element={<ProductPage />}></Route>
     <Route path='/addproduct' element={<AddProductModal />}></Route>
@@ -34,6 +39,7 @@ const Allroutes = () => {
     <Route path='/userlogin' element={<UserLogin />}></Route>
     <Route path='/forgotpass' element={<ForgotPassword />}></Route>
     <Route path='/resetpass' element={<Resetpassword />}></Route>
+    <Route path='/product' element={<Product />}></Route>
    </Routes>
    
    </>

@@ -2,8 +2,10 @@
 
 
 import './App.css';
+
 import Allroutes from './Allroutes/Allroutes';
 //import Product from './Component/Product/Product';
+
 
 import Product from './Component/Product/Product';
 import Sigleproduct from './Component/Product/Sigleproduct';
@@ -29,6 +31,7 @@ function App() {
 
   return (
     <div className="App">
+<<<<<<< HEAD
 
      
    
@@ -40,6 +43,13 @@ function App() {
       <Homepage />
       <Footer />
       <Allroutes />
+=======
+ 
+      <Navbar />    
+    <Allroutes />
+    <Footer /> 
+    
+>>>>>>> b5e5ac6baa1cff8035212ebc2515e0ded4248578
 
     </div>
   );

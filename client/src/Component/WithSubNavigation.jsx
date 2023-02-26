@@ -16,11 +16,19 @@ import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 import logo from "./logo.jpg";
 import { GrBasket } from "react-icons/gr";
+<<<<<<< HEAD
 import { useSelector } from "react-redux";
+=======
+import { useNavigate } from "react-router";
+>>>>>>> b5e5ac6baa1cff8035212ebc2515e0ded4248578
 
 export default function WithSubnavigation(props) {
   const { isOpen, onToggle } = useDisclosure();
+<<<<<<< HEAD
   const cart = useSelector((store)=>store.cartManager.data);
+=======
+  const navigate=useNavigate()
+>>>>>>> b5e5ac6baa1cff8035212ebc2515e0ded4248578
   
   return (
     <Box>
@@ -86,7 +94,7 @@ export default function WithSubnavigation(props) {
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
-            href={"#"}
+           onClick={()=>navigate("/userlogin")}
           >
             Login
           </Button>
@@ -97,7 +105,7 @@ export default function WithSubnavigation(props) {
             fontWeight={600}
             color={"white"}
             bg={"pink.400"}
-            href={"#"}
+           onClick={()=>navigate("/userregister")}
             _hover={{
               bg: "pink.300",
             }}
@@ -114,6 +122,8 @@ export default function WithSubnavigation(props) {
           borderRadius="2px"        
           width="116px"
           padding={"5px"}
+          style={{cursor:"pointer"}}
+          onClick={()=>navigate("/cart")}
         //   border={"2px solid green"}
         >
         <GrBasket size={"30px"} />

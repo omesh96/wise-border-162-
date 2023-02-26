@@ -9,6 +9,8 @@ client/.env
 server/.env
 /.pnp
 .pnp.js
+node_modules
+package-lock.json
 
 # testing
 /coverage

@@ -144,6 +144,8 @@ const UserRegister = () => {
 
  </form>
  <span className='span'>Already Register? <Link to="/userlogin" style={{color:"red"}}> Login Now</Link> </span>
+ <span className='span'>Are You a Admin? <Link to="/adminlogin" style={{color:"red"}}> Login for admin</Link> </span>
+ 
   </div>
   )
 }

@@ -14,6 +14,7 @@ export const getCartProducts = () => (dispatch) =>{
 }
 
 export const addNewProductCart = (payload)=>(dispatch) =>{
+    console.log("hellow cart")
     dispatch({type : CART_LOADING})
     const res = JSON.parse(localStorage.getItem("bbCart"))||[];
     for(let i=0;i<res.length;i++)
