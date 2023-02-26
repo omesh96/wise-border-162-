@@ -105,7 +105,7 @@ const UserLogin = () => {
  </div>
   }
   return (
-  <div className="container">
+  <div className="container" style={{marginTop:"100px"}}>
     <Toaster position='top-center' reverseOrder={false}></Toaster>
     <Heading m={"20px"}>User Login !</Heading>
  <form action="" onSubmit={handlesubmit}>
@@ -130,7 +130,7 @@ const UserLogin = () => {
  </form>
  <span className='span'>Dont Have an Account? <Link to="/userregister" style={{color:"red"}}> Register Now</Link> </span>
   <br />
- <span className='span'>forgot Password? <Link to="/forgotpassword" style={{color:"red"}}> Reset Now</Link> </span>
+ <span className='span'>forgot Password? <Link to="/forgotpass" style={{color:"red"}}> Reset Now</Link> </span>
   
   </div>
   )

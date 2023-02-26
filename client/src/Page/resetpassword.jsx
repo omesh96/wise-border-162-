@@ -63,7 +63,7 @@ const Resetpassword = () => {
             isClosable: true,
           })
           setloading(false)
-           // navigate("/resetpass")
+            navigate("/")
       }, 2000);
       })
       .catch( (error)=> {
@@ -101,7 +101,7 @@ const Resetpassword = () => {
   </div>
    }
   return (
-  <div className="container"  >
+  <div className="container" style={{marginTop:"100px"}} >
     <Toaster position='top-center' reverseOrder={false}></Toaster>
     <Heading>Reset Your Password !</Heading>
  <form action="" onSubmit={handlesubmit}>
