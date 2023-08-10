@@ -4,6 +4,7 @@ import SingleCarousel from "../Component/SingleCarousel";
 import CarouselCosmetics from "../Component/CarouselCosmetics";
 import { useNavigate } from "react-router";
 
+
 const Homepage = () => {
 
   const naivigate=useNavigate()
