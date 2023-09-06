@@ -18,11 +18,6 @@ import {
 } from "@chakra-ui/react";
 
 
-
-
-
-
-
 const SidebarContent = ({
   onClick,
   show,
