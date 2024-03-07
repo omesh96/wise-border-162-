@@ -7,7 +7,6 @@ const CartProduct = (props) => {
     const [qty, setQty] = useState(productDetails['productCount']);
     const dispatch = useDispatch();
     
-
     const incrementClick = ()=>{
         if(qty<5)
         {
