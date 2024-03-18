@@ -8,7 +8,7 @@ const putemailinbodybeforeupdatepass=async(req,res,next)=>{
         
             if(user.length>0){
             
-                req.body.useremail=user[0].email 
+ req.body.useremail=user[0].email 
                 next()
             } else{
                 res.status(501).send({msg:"Please Login First"})
