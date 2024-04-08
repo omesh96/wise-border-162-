@@ -13,6 +13,7 @@ const DesktopNav = () => {
         width={"600px"}
       >
 
+
         <Input placeholder="Search for Products.." />
         <InputRightAddon bg="#84c225" color={"white"} children={<CiSearch size={"24px"}/>} />
       </InputGroup>
