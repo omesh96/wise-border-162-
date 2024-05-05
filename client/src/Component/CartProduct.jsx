@@ -14,6 +14,7 @@ const CartProduct = (props) => {
             increaseProductCount();
         }
     }
+
     const decrementClick= ()=>{
         if(qty>1)
             setQty(qty-1);
