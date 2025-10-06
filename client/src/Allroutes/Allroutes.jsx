@@ -19,6 +19,7 @@ import Homepage from '../Page/Homepage'
 import ProductCart from '../Component/Product/ProductCart'
 import Product from '../Component/Product/Product'
 
+
 const Allroutes = () => {
   return (
    <>
